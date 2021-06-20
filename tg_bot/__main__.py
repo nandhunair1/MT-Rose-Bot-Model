@@ -23,13 +23,7 @@ PM_START_TEXT = """
 
 *ഞാൻ* [ഇദ്ദേഹം](tg://user?id={}) *നോക്കി നടത്തുന്ന ഒരു അടിപൊളി അഡ്മിൻ ബോട്ടാണ്.*
 
-*എന്നെ നിർമ്മിച്ചിരിക്കുന്നത് python3 യിൽ python-telegram-bot ലൈബ്രറി ഉപയോഗിച്ചാണ്. ഞാൻ പൂർണ്ണമായിട്ടും ഓപ്പൺസോഴ്സ്ഡ് ആണ്. എന്റെ കോഡ് നിങ്ങൾക്ക് തായ കാണുവാൻ സാധിക്കും.*
-
-*എന്നെപ്പോലെ ഒരു അഡ്മിൻ ബോട്ടിനെ ഉണ്ടാക്കുവാൻ താഴെ കൊടുത്തിരിക്കുന്ന വീഡിയോ കാണുക.*
-
-*എന്റെ അപ്ഡേറ്റുകളെക്കുറിച്ചും പ്രവർത്തനത്തെപറ്റിയും അറിയുവാൻ അപ്ഡേറ്റ് ചാനൽ സബ്സ്ക്രൈബ് ചെയ്യുക.*
-
-*ലഭ്യമായ കമാന്റുകളെപ്പറ്റി അറിയുവാൻ /help അമർത്തുക.*
+*എന്നെ മറ്റു ഗ്രൂപ്പിൽ ഒന്നും ഉപയോഗിക്കാൻ കഴിയുകയില്ല.*
 
 """
 
@@ -50,7 +44,7 @@ And the following:
 
 DONATE_STRING = """ *🙋‍♂️Hello Bro or Sis*!
 
-*👨‍💻Editing* :- *@Mo_Tech_Group*
+*👨‍💻Editing* :- *@Mrc_VENOM*
 
 *😔Donation Link Coming Soon😔*
 
@@ -152,10 +146,9 @@ def start(bot: Bot, update: Update, args: List[str]):
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
 
                 parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="👨‍💼 Master", url="t.me/MRK_YT"),  InlineKeyboardButton(text="Help 🤔", url="https://t.me/{}?start=help".format(bot.username))],
-                     [InlineKeyboardButton(text="🖥️ Tutorial Video🖥️", url="https://youtu.be/wKL90i3cjPw")],
-                     [InlineKeyboardButton(text="👥 Any Doubt", url="t.me/Mo_Tech_Group"), InlineKeyboardButton(text="MT Updates🤖", url="t.me/Mo_Tech_YT")],
-                     [InlineKeyboardButton(text="🎬 YT Channel", url="https://youtube.com/channel/UCmGBpXoM-OEm-FacOccVKgQ"), InlineKeyboardButton(text="Repo ⛓️", url="https://github.com/MRK-YT/MT-Rose-Bot-Model")],
+                    [[InlineKeyboardButton(text="👨‍💼 Master", url="t.me/Mrc_VENOM"),  InlineKeyboardButton(text="Help 🤔", url="https://t.me/{}?start=help".format(bot.username))],
+                     [InlineKeyboardButton(text="🛡 Group 🛡", url="t.me/tvseriezzz")],
+                     [InlineKeyboardButton(text="🎭 Chat Group 🎭", url="t.me/MrCVENOM_chat"), InlineKeyboardButton(text="🤖 Movies Bot 🤖", url="t.me/TVSERIEZZZ2_bot")],
                      [InlineKeyboardButton(text="➕ Add me to your group ➕", url="t.me/{}?startgroup=true".format(bot.username)) ]]))
     else:
         update.effective_message.reply_text("ചത്തിട്ടില്ലാ...")

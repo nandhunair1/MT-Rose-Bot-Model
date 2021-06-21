@@ -25,6 +25,8 @@ PM_START_TEXT = """
 
 *എന്നെ മറ്റു ഗ്രൂപ്പിൽ ഒന്നും ഉപയോഗിക്കാൻ കഴിയുകയില്ല.*
 
+*ലഭ്യമായ കമാന്റുകളെപ്പറ്റി അറിയുവാൻ /help അമർത്തുക.*
+
 """
 
 HELP_STRINGS = """
@@ -116,9 +118,10 @@ def send_help(chat_id, text, keyboard=None):
 @run_async
 def test(bot: Bot, update: Update):
     # pprint(eval(str(update)))
-    # update.effective_message.reply_text("Hola tester! _I_ *have* markdown", parse_mode=ParseMode.MARKDOWN)
+    # update.effective_message.reply_text("Hola tester! _I_ *have* `markdown`", parse_mode=ParseMode.MARKDOWN)
     update.effective_message.reply_text("This person edited a message")
     print(update.effective_message)
+
 
 @run_async
 def start(bot: Bot, update: Update, args: List[str]):
@@ -145,7 +148,7 @@ def start(bot: Bot, update: Update, args: List[str]):
                 PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_ID),
 
                 parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="👨‍💼 Master", url="t.me/Mrc_VENOM"),  InlineKeyboardButton(text="❔ Help", callback_data="help_back")],
+                    [[InlineKeyboardButton(text="👨‍💼 Master", url="t.me/Mrc_VENOM"),  InlineKeyboardButton(text="Help 🤔",callback_data="help_back")],
                      [InlineKeyboardButton(text="🛡 Group 🛡", url="t.me/tvseriezzz")],
                      [InlineKeyboardButton(text="🎭 Chat Group 🎭", url="t.me/MrCVENOM_chat"), InlineKeyboardButton(text="🤖 Movies Bot 🤖", url="t.me/TVSERIEZZZ2_bot")],
                      [InlineKeyboardButton(text="➕ Add me to your group ➕", url="t.me/{}?startgroup=true".format(bot.username)) ]]))
@@ -206,7 +209,7 @@ def help_button(bot: Bot, update: Update):
                                      reply_markup=InlineKeyboardMarkup(
                                          paginate_modules(curr_page - 1, HELPABLE, "help")))
 
-elif next_match:
+        elif next_match:
             next_page = int(next_match.group(1))
             query.message.reply_text(HELP_STRINGS,
                                      parse_mode=ParseMode.MARKDOWN,
@@ -288,8 +291,7 @@ def settings_button(bot: Bot, update: Update):
     query = update.callback_query
     user = update.effective_user
     mod_match = re.match(r"stngs_module\((.+?),(.+?)\)", query.data)
-
-prev_match = re.match(r"stngs_prev\((.+?),(.+?)\)", query.data)
+    prev_match = re.match(r"stngs_prev\((.+?),(.+?)\)", query.data)
     next_match = re.match(r"stngs_next\((.+?),(.+?)\)", query.data)
     back_match = re.match(r"stngs_back\((.+?)\)", query.data)
     try:
@@ -361,8 +363,7 @@ def get_settings(bot: Bot, update: Update):
         if is_user_admin(chat, user.id):
             text = "Click here to get this chat's settings, as well as yours."
             msg.reply_text(text,
-
-reply_markup=InlineKeyboardMarkup(
+                           reply_markup=InlineKeyboardMarkup(
                                [[InlineKeyboardButton(text="⚙️ Settings ⚙️",
                                                       url="t.me/{}?start=stngs_{}".format(
                                                           bot.username, chat.id))]]))
@@ -467,7 +468,7 @@ def main():
                               port=PORT,
                               url_path=TOKEN)
 
-if CERT_PATH:
+        if CERT_PATH:
             updater.bot.set_webhook(url=URL + TOKEN,
                                     certificate=open(CERT_PATH, 'rb'))
         else:
@@ -480,6 +481,9 @@ if CERT_PATH:
         updater.idle()
 
 
-if name == '__main__':
+if __name__ == '__main__':
     LOGGER.info("Successfully loaded modules: " + str(ALL_MODULES))
     main()
+
+
+

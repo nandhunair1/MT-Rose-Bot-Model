@@ -1,7 +1,7 @@
 {
-  "name": "MT-Rose-Bot-Model",
+  "name": "Rose-Bot-Model",
   "description": "Telegram's sassiest group manager. Modular Telegram group management bot!",
-  "logo": "https://telegra.ph/file/9e831d15da94deb56ef4c.jpg",
+  "logo": "https://telegra.ph/file/07c1c3c897dda52727dfb.jpg",
   "keywords": [
     "telegram",
     "best",
@@ -12,7 +12,7 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/MRK-YT/MT-Rose-Bot-Model",
+  "repository": "Rose-Bot-Model",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable env variables. But, you need to understand the code to know what to set here!",
@@ -27,7 +27,7 @@
     },
     "OWNER_USERNAME": {
       "description": "Your username",
-      "value": "DARK_ANGEL_1234"
+      "value": "Mrc_VENOM"
     },
     "WEBHOOK": {
       "description": "Setting this to ANYTHING will enable webhooks when in env mode messages",

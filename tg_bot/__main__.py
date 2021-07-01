@@ -148,8 +148,7 @@ def start(bot: Bot, update: Update, args: List[str]):
                 parse_mode=ParseMode.MARKDOWN, reply_markup=InlineKeyboardMarkup(
                     [[InlineKeyboardButton(text="👨‍💼 Master", url="t.me/Mrc_VENOM"),  InlineKeyboardButton(text="Help 🤔",callback_data="help_back")],
                      [InlineKeyboardButton(text="🛡 Group 🛡", url="t.me/tvseriezzz")],
-                     [InlineKeyboardButton(text="🎭 Chat Group 🎭", url="t.me/MrCVENOM_chat"), InlineKeyboardButton(text="🤖 Movies Bot 🤖", url="t.me/TVSERIEZZZ2_bot")],
-                     [InlineKeyboardButton(text="➕ Add me to your group ➕", url="t.me/{}?startgroup=true".format(bot.username)) ]]))
+                     [InlineKeyboardButton(text="🎭 Chat Group 🎭", url="t.me/MrCVENOM_chat"), InlineKeyboardButton(text="📢 Updates 📢", url="t.me/tvseriezzz_update")]]))
     else:
         update.effective_message.reply_text("ചത്തിട്ടില്ലാ...")
 

@@ -64,12 +64,6 @@ USER_SETTINGS = {}
 
 GDPR = []
 
-START_IMG = os.environ.get('START_IMG', None)
-if START_IMG is None:
-    img = "https://telegra.ph/file/4dde88fb33e46159d65b9.jpg"
-else:
-  img = START_IMG
-
 for module_name in ALL_MODULES:
     imported_module = importlib.import_module("tg_bot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
